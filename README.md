@@ -113,6 +113,6 @@ if ($page1list->hasNext()) { // есть еще страницы в выдаче
 
 ## Лицензия
 
-:warning: SDK это частная разработка и доступна всем желающим :warning:
+:warning: Это частная разработка и доступна всем желающим :warning:
 
-Используется по лицензии [MIT](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt)
+Используется по лицензии [MIT](https://opensource.org/licenses/MIT)
