@@ -1,6 +1,5 @@
 # Bothelp PHP SDK
 
-
 PHP Клиент для работы с Bothelp.io API
 
 📖 Документация по API bothelp по [ссылке](https://main.bothelp.io/swagger)
@@ -19,11 +18,12 @@ PHP Клиент для работы с Bothelp.io API
 
 ## 1. Установка
 
-###Требования 
-```php >= 7.4``` 
+### Требования
+
+`php >= 7.4` 
 
 ### Установка через composer 
-``` composer require bothelpio/bothelp-php-sdk ```
+`composer require bothelpio/bothelp-php-sdk`
 
 
 ## 2. QuickStart 🚀
