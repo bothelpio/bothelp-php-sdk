@@ -59,7 +59,7 @@ class SubscribersList implements Countable, IteratorAggregate, ArrayAccess
         }
     }
 
-    public function isHasNext(): bool
+    public function hasNext(): bool
     {
         return $this->hasNext;
     }
