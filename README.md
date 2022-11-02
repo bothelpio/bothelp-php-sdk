@@ -39,6 +39,7 @@ client_secret
 use BothelpSDK\BothelpClient;
 use BothelpSDK\Config\ClientOptions;
 
+// создаем клиента
 $options = new ClientOptions(
     '***YourClientId***',
     '***YourClientSecret***'
@@ -52,12 +53,12 @@ $response = $client->apiRequest('GET', 'subsribers?after=12323');
 
 ## 3. Список подписчиков
 ```phpt
-// создаем клиента
 use BothelpSDK\BothelpClient;
 use BothelpSDK\Config\ClientOptions;
 use BothelpSDK\Request\Subscriber\SubscriberFilter;
 use BothelpSDK\Resource\Subscriber\SubscriberService;
 
+// создаем клиента
 $options = new ClientOptions(
     '***YourClientId***',
     '***YourClientSecret***'
