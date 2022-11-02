@@ -1,6 +1,6 @@
 {
   "name": "bothelpio/bothelp-php-sdk",
-  "description": "PHP SDK for Bothelp.io API",
+  "description": "PHP Client for Bothelp.io API",
   "keywords": [
     "Bothelp",
     "SDK",
