@@ -3,12 +3,12 @@ PHP Клиент для работы с Bothelp.io API
 
 Документация по API bothelp по [ссылке](https://main.bothelp.io/swagger)
 
-- ####[Установка](#install)
-- ####[QuickStart](#quickStart)
-- ####Методы
+- [Установка](#install)
+- [QuickStart](#quickStart)
+- Методы
     - [Список подписчиков](#subscribersList)
 
-## Установка {#install}
+## Установка(#install)
 
 ###Требования 
 ```php >= 7.4``` 
@@ -16,7 +16,7 @@ PHP Клиент для работы с Bothelp.io API
 ### Установка через composer 
 ``` composer require bothelpio/bothelp-php-sdk ```
 
-## QuickStart {#quickStart}
+## QuickStart(#quickStart)
 
 В личном кабинете получаем
 
@@ -40,7 +40,7 @@ $response = $client->apiRequest('GET', 'subsribers?after=12323');
  
 ```
 
-## Список подписчиков {#subscribersList}
+## Список подписчиков(#subscribersList)
 ```phpt
 // создаем клиента
 use BothelpSDK\BothelpClient;
