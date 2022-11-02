@@ -1,4 +1,4 @@
-# Bothelp PHP SDK
+# Bothelp Api Client PHP
 
 PHP Клиент для работы с Bothelp.io API
 
