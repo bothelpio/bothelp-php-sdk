@@ -68,7 +68,7 @@ $client = new new BothelpClient($options);
 $subscriberService = new SubscriberService($client);
 
 // ПРИМЕР 1 
-// получим список всех подписчиков и выведем из имена
+// получим список всех подписчиков и выведем их имена
 $list = $subscriberService->list();
 foreach($list as $subscriber) {
     echo $subscriber->getName();
