@@ -1,0 +1,43 @@
+{
+  "name": "bothelpio/bothelp-php-sdk",
+  "description": "PHP SDK for Bothelp.io API",
+  "keywords": [
+    "Bothelp",
+    "SDK",
+    "Php",
+    "bothelp api",
+    "api"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bothelpio",
+      "homepage": "https://github.com/bothelpio"
+    },
+    {
+      "name": "Andrey Solovjev",
+      "email": "ansolovjev@gmail.com",
+      "homepage": "https://github.com/andreygrok"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "guzzlehttp/guzzle": "^7.5",
+    "webmozart/assert": "^1.11"
+  },
+  "autoload": {
+    "psr-4": {
+      "BothelpSDK\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "BothelpSDK\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "ext-curl": "*",
+    "phpunit/phpunit": "^9.5",
+    "friendsofphp/php-cs-fixer": "^3.13"
+  }
+}
