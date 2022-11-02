@@ -115,4 +115,4 @@ if ($page1list->hasNext()) { // есть еще страницы в выдаче
 
 :warning: Это частная разработка и доступна всем желающим :warning:
 
-Используется по лицензии [MIT](https://opensource.org/licenses/MIT)
+Используется по лицензии [MIT](https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_MIT)
