@@ -12,7 +12,7 @@ PHP Клиент для работы с Bothelp.io API
     - [Список подписчиков](#3-список-подписчиков)
     - [Изменение полей подписчика](#4-изменение-полей-подписчика)
     - [Изменение меток подписчика](#5-изменение-меток-подписчика)
-    - [Изменение customerFields подписчика](#6-изменение-customfields-подписчика)
+    - [Изменение customFields подписчика](#6-изменение-customfields-подписчика)
     - [Отправка сообщений](#7-отправка-сообщений)
     - [Работа с авторассылками](#8-работа-с-авторассылками)
     - [Работа с ботом подписчика](#9-работа-с-ботом-подписчика)
@@ -49,7 +49,17 @@ $options = new ClientOptions(
 $client = new new BothelpClient($options);
 
 //отправляем произовольный запрос к апи bothelp
+// get
 $response = $client->apiRequest('GET', 'subsribers?after=12323');
+// patch
+$response = $client->apiRequest(
+    'PATCH', 
+    'subsribers/12', 
+    [
+      ['op' => 'replace', 'path' => '/name', 'value' => 'John Doe']
+    ]
+);
+//etc...
  
 ```
 
@@ -192,11 +202,11 @@ $customFieldService = new CustomField($client);
 
 // Установим поле favorite_color в значение blue для подписчика с id = 92
 $id = (new SubscriberId())->setId(92);
-$response = $customFieldService->setField($id, 'favorite_color', 'blue');
+$customFieldService->setField($id, 'favorite_color', 'blue');
 
 // Установим поле Бюджет в значение 7000 для подписчика с cuid = 1et0.2k
 $id = (new SubscriberId())->setCuid('1et0.2k');
-$response = $customFieldService->setField($id, 'Бюджет', '7000');
+$customFieldService->setField($id, 'Бюджет', '7000');
 
 ```
 
