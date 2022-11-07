@@ -61,7 +61,7 @@ class CustomField
             'PATCH',
             Endpoints::SUBSCRIBERS_RESOURCE
                     . '/' . Endpoints::CUID_RESOURCE
-                    . '/' .$cuid
+                    . '/' . $cuid
                     . '/' . Endpoints::CUSTOMER_FIELDS_RESOURCE,
             [$actionData->toArray()]
         );

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace BothelpSDK\Entities\Subscriber;
-
 
 class ActionData
 {
