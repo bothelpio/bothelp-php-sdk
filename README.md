@@ -105,6 +105,7 @@ if ($page1list->hasNext()) { // есть еще страницы в выдаче
 ```phpt
 use BothelpSDK\BothelpClient;
 use BothelpSDK\Config\ClientOptions;
+use BothelpSDK\Request\Subscriber\SubscriberId;
 use BothelpSDK\Resource\Subscriber\SubscriberService;
 
 // создаем клиента
@@ -144,6 +145,7 @@ $subscriberService->setNotes($id, 'some notes text... ');
 ```phpt
 use BothelpSDK\BothelpClient;
 use BothelpSDK\Config\ClientOptions;
+use BothelpSDK\Request\Subscriber\SubscriberId;
 use BothelpSDK\Resource\Subscriber\SubscriberService;
 
 // создаем клиента
@@ -172,7 +174,32 @@ $subscriberService->removeTags($id, ['bad', 'best']);
 ```
 
 ## 6. Изменение customerFields подписчика
-:construction_worker: Скоро будет
+```phpt
+use BothelpSDK\BothelpClient;
+use BothelpSDK\Config\ClientOptions;
+use BothelpSDK\Request\Subscriber\SubscriberId;
+use BothelpSDK\Resource\CustomField\CustomField;
+
+// создаем клиента
+$options = new ClientOptions(
+    '***YourClientId***',
+    '***YourClientSecret***'
+);
+$client = new new BothelpClient($options);
+
+// создаем сервис для работы с customField
+$customFieldService = new CustomField($client);
+
+// Установим поле favorite_color в значение blue для подписчика с id = 92
+$id = (new SubscriberId())->setId(92);
+$response = $customFieldService->setField($id, 'favorite_color', 'blue');
+
+// Установим поле Бюджет в значение 7000 для подписчика с cuid = 1et0.2k
+$id = (new SubscriberId())->setCuid('1et0.2k');
+$response = $customFieldService->setField($id, 'Бюджет', '7000');
+
+```
+
 ## 7. Отправка сообщений
 
 :construction_worker: Скоро будет

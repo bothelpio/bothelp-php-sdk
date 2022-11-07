@@ -9,7 +9,7 @@ use BothelpSDK\Entities\Subscriber\SubscribersList;
 use BothelpSDK\Request\Subscriber\SubscriberFilter;
 use BothelpSDK\Entities\Subscriber\ActionData;
 use BothelpSDK\Request\Subscriber\SubscriberId;
-use Exception\ValidateException;
+use BothelpSDK\Exception\ValidateException;
 
 class SubscriberService
 {
