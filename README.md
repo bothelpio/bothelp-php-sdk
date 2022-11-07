@@ -11,9 +11,11 @@ PHP Клиент для работы с Bothelp.io API
 - Методы
     - [Список подписчиков](#3-список-подписчиков)
     - [Изменение полей подписичка](#4-изменение-полей-подписчика)
-    - [Отправка сообщений](#5-отправка-сообщений)
-    - [Работа с авторассылками](#6-работа-с-авторассылками)
-    - [Работа с ботом подпичика](#7-работа-с-ботом-подписчика)
+    - [Изменение меток подписичка](#5-изменение-меток-подписчика)
+    - [Изменение customerFields подписичка](#6-изменение-customerfields-подписчика)
+    - [Отправка сообщений](#7-отправка-сообщений)
+    - [Работа с авторассылками](#8-работа-с-авторассылками)
+    - [Работа с ботом подпичика](#9-работа-с-ботом-подписчика)
 
 
 ## 1. Установка
@@ -98,16 +100,86 @@ if ($page1list->hasNext()) { // есть еще страницы в выдаче
 
 ```
 
-## 4. Изменение полей подписчика
+## 4. Изменение полей подписчика 
+
+```phpt
+use BothelpSDK\BothelpClient;
+use BothelpSDK\Config\ClientOptions;
+use BothelpSDK\Resource\Subscriber\SubscriberService;
+
+// создаем клиента
+$options = new ClientOptions(
+    '***YourClientId***',
+    '***YourClientSecret***'
+);
+$client = new new BothelpClient($options);
+
+// создаем сервис для работы с подписчиками
+$subscriberService = new SubscriberService($client);
+
+// Определим с каким подписчиком будем работать.
+// по ID подписчика
+$id = (new SubscriberId())->setId(92);
+// или по CUID подписчика
+$id = (new SubscriberId())->setCuid('1et0.2k');
+
+// Вызовем нужные методы
+
+// записать телефон
+$subscriberService->setPhone($id, '+79941111111');
+// записать email
+$subscriberService->setEmail($id, 'hello@bothelp.io');
+// записать полное имя
+$subscriberService->setName($id, 'John Doe');
+// записать имя
+$subscriberService->setFirstName($id, 'John');
+// записать фамилию
+$subscriberService->setLastName($id, 'Doe');
+// записать заметки
+$subscriberService->setNotes($id, 'some notes text... ');
+
+```
+
+## 5. Изменение меток подписичка
+```phpt
+use BothelpSDK\BothelpClient;
+use BothelpSDK\Config\ClientOptions;
+use BothelpSDK\Resource\Subscriber\SubscriberService;
+
+// создаем клиента
+$options = new ClientOptions(
+    '***YourClientId***',
+    '***YourClientSecret***'
+);
+$client = new new BothelpClient($options);
+
+// создаем сервис для работы с подписчиками
+$subscriberService = new SubscriberService($client);
+
+// Определим с каким подписчиком будем работать.
+// по ID подписчика
+$id = (new SubscriberId())->setId(92);
+// или по CUID подписчика
+$id = (new SubscriberId())->setCuid('1et0.2k');
+
+// Вызовем нужные методы
+
+// добавим 3 метки пользователю
+$subscriberService->setTags($id, ['awesome', 'bad', 'best']);
+// удалить 2 метки у пользователя
+$subscriberService->removeTags($id, ['bad', 'best']);
+
+```
+
+## 6. Изменение customerFields подписичка
+:construction_worker: Скоро будет
+## 7. Отправка сообщений
 
 :construction_worker: Скоро будет
-## 5. Отправка сообщений
+## 8. Работа с авторассылками
 
 :construction_worker: Скоро будет
-## 6. Работа с авторассылками
-
-:construction_worker: Скоро будет
-## 7. Работа с ботом подписчика
+## 9. Работа с ботом подписчика
 
 :construction_worker: Скоро будет
 
