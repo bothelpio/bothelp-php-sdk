@@ -44,6 +44,7 @@ class CustomField
             ->setPath($fieldName)
             ->setValue($fieldValue);
     }
+
     private function subscriberRequestById(int $id, ActionData $actionData): array
     {
         return $this->client->apiRequest(

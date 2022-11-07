@@ -212,7 +212,35 @@ $customFieldService->setField($id, 'Бюджет', '7000');
 
 ## 7. Отправка сообщений
 
-:construction_worker: Скоро будет
+```phpt
+use BothelpSDK\BothelpClient;
+use BothelpSDK\Config\ClientOptions;
+use BothelpSDK\Request\Subscriber\SubscriberId;
+use BothelpSDK\Resource\Message\MessageService;
+
+// создаем клиента
+$options = new ClientOptions(
+    '***YourClientId***',
+    '***YourClientSecret***'
+);
+$client = new new BothelpClient($options);
+
+// создаем сервис для работы с сообщениями
+$messageService = new MessageService($client);
+
+// отправим сообщение для подписчика с id = 92
+$id = (new SubscriberId())->setId(92);
+$messageService->send($id, 'hello world');
+
+// отправим сообщение в несколько строк для подписчика с cuid = 1et0.2k
+$id = (new SubscriberId())->setCuid('1et0.2k');
+$content = 'hello' . PHP_EOL;
+$content .= 'My name api ' . PHP_EOL;
+$content .= '😂';
+$messageService->send($id, $content);
+
+```
+
 ## 8. Работа с авторассылками
 
 :construction_worker: Скоро будет
